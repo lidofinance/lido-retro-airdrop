@@ -90,9 +90,10 @@ contract('Voting for LDO token transfer', (addresses) => {
 
       const code = await web3.eth.getCode(account)
       if (code !== '0x') {
+        console.log(`      [i] is a contract`)
         const balance = await web3.eth.getBalance(account)
         if (new BN(balance).lt(ONE_TENTH_ETHER)) {
-          console.log(`skipping the contract: insufficient balance`)
+          console.log(`      [!] skipping the contract: insufficient balance`)
           return
         }
       }
