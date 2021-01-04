@@ -1,0 +1,35 @@
+.idea
+.vscode
+**/build/
+**/node_modules/
+**/artifacts/
+.cache
+**/cache/
+dist/
+tmp/
+
+/coverage/
+/coverage.json
+.coverage_*/
+
+**/data/
+*.log
+
+# Yarn stuff
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Sensitive data
+/accounts.json
+# dev temp data
+/deployed-mainnet-fork.json
