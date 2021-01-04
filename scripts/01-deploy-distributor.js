@@ -1,3 +1,6 @@
+const path = require('path')
+const fs = require('fs').promises
+
 const runOrWrapScript = require('./helpers/run-or-wrap-script')
 const { log, yl, gr } = require('./helpers/log')
 const { readNetworkState, assertRequiredNetworkState, persistNetworkState } = require('./helpers/persisted-network-state')

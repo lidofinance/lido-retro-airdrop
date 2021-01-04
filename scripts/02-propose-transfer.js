@@ -38,7 +38,7 @@ async function main({ web3, artifacts }) {
 
   log.splitter()
 
-  await proposeTransfer(state, merkleData, airdropConfig.merkleDistributorAddress, FROM)
+  await proposeTransfer(state, airdropConfig.merkleDistributorAddress, merkleData, FROM)
 }
 
 async function proposeTransfer(state, merkleDistributorAddress, merkleData, holderAddress) {
