@@ -8,7 +8,7 @@ const { assert } = require('./helpers/assert')
 
 const REQUIRED_NET_STATE = [
   'daoTokenAddress',
-  'airdrop-1-retro'
+  'oneinch-rewards'
 ]
 
 const FROM = process.env.FROM
@@ -22,13 +22,16 @@ async function main({ web3, artifacts }) {
   const state = readNetworkState(network.name, netId)
   assertRequiredNetworkState(state, REQUIRED_NET_STATE)
 
-  const merkleFilePath = path.resolve(__dirname, '..', state['airdrop-1-retro'].merkleFile)
+  // const [firstAccount] = await web3.eth.getAccounts()
+  // console.log(firstAccount, FROM)
+
+  const merkleFilePath = path.resolve(__dirname, '..', state['oneinch-rewards'].merkleFile)
   const merkleData = JSON.parse(await fs.readFile(merkleFilePath))
 
   log.splitter()
 
   const distributor = await deployDistributor(merkleData, state.daoTokenAddress, FROM)
-  state['airdrop-1-retro'].merkleDistributorAddress = distributor.addresses
+  state['oneinch-rewards'].merkleDistributorAddress = distributor.addresses
 
   persistNetworkState(network.name, netId, state)
 }

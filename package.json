@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "test": "yarn hardhat test test/retro-airdrop.js",
+    "test": "yarn hardhat test test/oneinch-rewards.js",
     "compile": "hardhat compile"
   },
   "author": "Sam Kozin <sam.kozin@gmail.com>",

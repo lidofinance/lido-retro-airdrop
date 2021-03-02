@@ -15,7 +15,7 @@ const REQUIRED_NET_STATE = [
   'app:aragon-finance',
   'app:aragon-token-manager',
   'app:aragon-voting',
-  'airdrop-1-retro'
+  'oneinch-rewards'
 ]
 
 const FROM = process.env.FROM
@@ -31,7 +31,7 @@ async function main({ web3, artifacts }) {
   const state = readNetworkState(network.name, netId)
   assertRequiredNetworkState(state, REQUIRED_NET_STATE)
 
-  const airdropConfig = state['airdrop-1-retro']
+  const airdropConfig = state['oneinch-rewards']
 
   const merkleFilePath = path.resolve(__dirname, '..', airdropConfig.merkleFile)
   const merkleData = JSON.parse(await fs.readFile(merkleFilePath))
@@ -55,7 +55,7 @@ async function proposeTransfer(state, merkleDistributorAddress, merkleData, hold
   const token = await getContract('ERC20').at(await tokenManager.token())
   log(`Using DAO token:`, yl(token.address))
 
-  const airdrop = state['airdrop-1-retro']
+  const airdrop = state['oneinch-rewards']
   log('Using MerkleDistributor address:', yl(merkleDistributorAddress))
 
   const transferAmount = new BN(merkleData.tokenTotal.replace(/^0x/, ''), 16)

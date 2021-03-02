@@ -13,8 +13,8 @@
   "app:aragon-voting": {
     "proxyAddress": "0x2e59A20f205bB85a89C53f1936454680651E618e"
   },
-  "airdrop-1-retro": {
-    "merkleFile": "./lido-08-merkle.json",
-    "merkleDistributorAddress": "0x4b3edb22952fb4a70140e39fb1add05a6b49622b"
+  "oneinch-rewards": {
+    "merkleFile": "./oneinch-05-merkle.json",
+    "merkleDistributorAddress": "0xdb46c277da1599390eab394327602889e9546296"
   }
 }

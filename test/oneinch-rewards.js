@@ -36,7 +36,7 @@ contract('Voting for LDO token transfer', (addresses) => {
   ]
 
   const state = readNetworkState('mainnet', 1)
-  const merkleFilePath = path.resolve(__dirname, '..', state['airdrop-1-retro'].merkleFile)
+  const merkleFilePath = path.resolve(__dirname, '..', state['oneinch-rewards'].merkleFile)
   const merkleData = JSON.parse(fs.readFileSync(merkleFilePath))
 
   let token, voting, distributor, transferAmount, voteId
